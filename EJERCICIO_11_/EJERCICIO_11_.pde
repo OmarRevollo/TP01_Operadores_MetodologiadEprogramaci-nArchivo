@@ -5,21 +5,21 @@ String mensaje_saludo = "";
 void setup() {
   size(400, 200);
   println(texto_consola);
+  textSize(32);
 }
 
 void draw() {
   background(0);
   text(mensaje_saludo, 100, 100);
-  textSize(32);
-
 }
 
 void keyPressed() {
-  nombre_ingresado += key;
-  println(nombre_ingresado);
-  
-  if (key == '\n') {
-    mensaje_saludo = "Hola, " + nombre_ingresado + " Bienvenido :D";
+  if (key != '\n') {
+    nombre_ingresado += key;
+    println(nombre_ingresado);
+  } else {
+    mensaje_saludo = "Hola, " + nombre_ingresado + ", ¡bienvenido! :D";
     println(mensaje_saludo);
+    nombre_ingresado = "";
   }
 }
